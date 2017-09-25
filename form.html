@@ -11,6 +11,17 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
+        <!-- Hotjar Tracking Code for https://dev1.notifyvisitors.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:622817,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
     <script>
     $(document).ready(function(){
         $("#submit").click(function(){
@@ -22,8 +33,10 @@
             }
             fetch('/submit',{method:'POST',body:data}).then(function(res){
                 console.log(res);
+                hj('formSubmitSuccessful');
             }).catch(function(err){
                 console.log(err);
+                hj('formSubmitFailed');
             })
 
 
