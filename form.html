@@ -50,6 +50,7 @@
             fetch('/submit',{method:'POST',body:data}).then(function(res){
                 console.log(res);
                 hj('formSubmitSuccessful');
+                _nv_hm.form("nvSuccess");
             }).catch(function(err){
                 console.log(err);
                 hj('formSubmitFailed');
@@ -66,6 +67,7 @@
             fetch('/submit2',{method:'POST',body:data}).then(function(res){
                 console.log(res);
                 hj('formSubmitSuccessful');
+                _nv_hm.form("nvSuccess");
             }).catch(function(err){
                 console.log(err);
                 hj('formSubmitFailed');
