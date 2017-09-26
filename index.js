@@ -12,6 +12,12 @@ app.post('/submit',function(req,res){
     res.send("form submitted");
 
 });
+app.post('/submit2',function(req,res){
+    
+        console.log(req.body);
+        res.send("form2 submitted");
+    
+    });
 app.get('/:name', function (req, res) {
 
     var options = {

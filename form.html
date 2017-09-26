@@ -57,6 +57,22 @@
 
 
         });
+
+        $("#submit2").click(function(){
+            var data = {
+                email : $("#exampleInputEmail1").val(),
+                password : $("#exampleInputPassword1").val()
+            }
+            fetch('/submit2',{method:'POST',body:data}).then(function(res){
+                console.log(res);
+                hj('formSubmitSuccessful');
+            }).catch(function(err){
+                console.log(err);
+                hj('formSubmitFailed');
+            })
+        
+        
+        });
     
     
     
@@ -72,9 +88,7 @@
 
 <body>
     <section class="row">
-
-        <div class="col-sm-12">
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-5 offset-sm-1">
                 <form >
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -118,7 +132,27 @@
                     <button id="submit" class="btn btn-primary" >Sign in</button>
                 </form>
             </div>
-        </div>
+            <div  class="col-sm-5 offset-sm-1">
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Check me out
+                      </label>
+                    </div>
+                    <button id="submit2" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+     
 
 
 
